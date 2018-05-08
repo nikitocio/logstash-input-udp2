@@ -220,14 +220,8 @@ class LogStash::Inputs::Udp2 < LogStash::Inputs::Base
     end
 
 
-    event.remove("message") if event.get("message")
-    event.remove("_id") if event.get("_id")
-    event.remove("_type") if event.get("_type")
-    event.remove("@version") if event.get("@version")
-    event.remove("_index") if event.get("_index")
-    event.remove("_score") if event.get("_score")
-    event.remove("host") if event.get("host")
-    event.remove("@timestamp") if event.get("@timestamp")
+    event.remove("message")
+
 
 
     @output_queue.push(event)
